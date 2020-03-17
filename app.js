@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 require('./store').init()
 
-
-
-
-=======
->>>>>>> parent of ba1aba8... Dodano połączenie z usługą Azure Storage
 const Koa = require('koa')
 const app = new Koa()
 const views = require('koa-views')
