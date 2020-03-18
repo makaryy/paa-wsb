@@ -1,5 +1,8 @@
 require('./store').init()
 
+const tasks = require('./routes/tasks')
+
+
 const Koa = require('koa')
 const app = new Koa()
 const views = require('koa-views')
@@ -13,6 +16,9 @@ const users = require('./routes/users')
 
 // error handler
 onerror(app)
+
+//trasy do konfiguracji aplikacji
+app.use(tasks.routes(), tasks.allowedMethods())
 
 // middlewares
 app.use(bodyparser({
