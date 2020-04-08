@@ -7,11 +7,18 @@ block content
     br
     input(type="text" id="title" name="title")
     br
+    label(for="description")
+      | Opis
+    br
+    input(type="text" id="description" name="description)
+    br
     input(type="submit", value="Dodaj")
 
   table
     tr
       th(scope= "col") Tytuł
+      th(scope= "col") Opis
     each task in tasks
       tr
         td= task.title
+        td= (task.description != null ? task.description : 'Brak opisu')
